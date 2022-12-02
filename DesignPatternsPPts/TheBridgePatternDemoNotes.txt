@@ -1,0 +1,16 @@
+BridgePattern
+
+Television Example
+
+AbstractDevice (with volume,deviceState)
+	TV1 -(Television)
+	TV2 -(DVD)
+	TV3 -(Radio)
+AbstractRemote (with 5,6  and 7,8 and 9)
+	Remote1-TV ( 5, 6 increases and decreases Channel / 7,8 increases and decreases Volume ; 9 Button Pressed - means Mute the Video)
+	Remote2-DVD( 5, 6 increases and decreases Chapter / 7,8 increases and decreases Volume ; 9 Button Pressed - Means Mute the Audio)
+
+
+The Device Remote might be DVD or TV remote and has 2 levels of Abstractions.....
+
+	
