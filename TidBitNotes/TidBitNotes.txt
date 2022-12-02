@@ -1,0 +1,95 @@
+class Employee
+{
+
+	String empId;
+	String empName;
+
+//getters setters constructors
+
+}
+class Server
+{
+
+	Data fn1(){----}
+
+
+}
+Employee e1 = new Employee("e1","Rajan")
+Employee e2 = new Employee("e1","Raja")
+e1 == e2;
+e1.equals(e2); false
+e1 = e2;
+e1 == e2
+---------------------------
+class Client
+{
+
+public void myFn()
+{
+
+/*
+Server s = new Server();
+	Data d = s.fn1(); */
+
+d + something
+
+}
+
+}
+-----------------------------------
+
+class MyController
+{
+MyService msc = new MyService();
+	p v saveEmployeeCtrl()
+	{
+		Employee e = new Employee("E1","Harsha",12);
+		msc.saveDEmployeeSvc(e);
+	}
+}
+
+----------------
+class MyService
+{
+MyDAO mdao = new MyDAO();
+	p v saveDEmployeeSvc(Employee e)
+	{
+	mdao.saveEmployee(e)
+	}
+
+
+}
+--------------
+class MyDAO
+{
+
+	saveEmployee(Employee e){     code}----------------------------------->DB
+	List <Employee> getEmployees()
+}
+--------------
+
+
+Employe e = Mockito.mock(Employee.class)
+
+
+@Mock
+private Employee e;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

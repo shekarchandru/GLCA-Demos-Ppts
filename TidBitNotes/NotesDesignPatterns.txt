@@ -1,0 +1,309 @@
+interface MouseListener
+{
+
+	mousePressed();
+	mouseReleased();
+	mouseClicked();
+
+}
+
+class MyMOuse1 implements MouseListener
+{
+
+	mousePressed(){jskldjlksfjslkjflks}
+	mouseReleased(){sahkjdhasjjd}
+	mouseClicked(){    }
+
+}
+class MyMOuse1 implements MouseListener
+{
+	mousePressed(){jskldjlksfjslkjflks}
+	mouseReleased(){-}
+	mouseClicked(){ ahkjdhasjj   }
+
+}
+--------------------------------------------------------------------------------------
+WriterModule --- high level module
+Write()
+{
+
+
+
+
+}
+
+------------------------------------------------
+
+ConsoleModule
+{
+WriteToConsole()
+{
+
+
+}
+}
+
+PrinterModule
+{
+WriteToPrinter()
+{
+
+
+
+}
+}
+speakerModule
+{
+WriteToSpeaker()
+{
+
+
+
+}
+}
+
+--------------------
+interface Writer
+{
+	writeToConsole()
+	writeToPrinter()
+	writeToSpeaker()
+}
+------------------------------
+class WriterModule implements Writer
+{
+	
+	writeToConsole()
+	writeToPrinter()
+	writeToSpeaker()
+
+}
+-----------
+SpeakerModule implements Writer
+{
+
+}
+PrinterModule Implemnts Writer
+{
+
+}
+ConsoleModule implements Writer
+{
+
+
+}
+-----------------------------------------------------
+DESIGN PATTERNS
+
+
+Analysis
+Design
+Construction
+Testing
+-----------
+Structural elements
+High leve
+Architecture Style - Design Pattern - Architecture Level Design Pattern
+Technology/Platforms
+Hardware Architecture
+Low Level
+Classes / Interfaces / Abstract classes - OOAD results
+DBMS
+Daccess techiques [ado,rdo,
+
+Searching algo
+Sorting algo
+Datastructures
+------------------------------
+
+WebServices - Implementation of SOA style
+WebApplication- Implementation of ROA style-----------------Architecture Level DPatterns
+MVC
+
+--------------------------
+Unified Modelling Language - UML
+DFD
+Flowcharts				----Design/Modelling level DPatterns
+Pseudocodes
+
+----------------------------------
+Eric Gama+FRichard GOF - 23/24 - Code level dpatterns
+ 
+Creational D P singleton/factory
+Patterns that help us to solve the problem of creating objects efficiently
+
+Behavioural DP 
+Helps in dealing with the problems w.r.t Objects' their interaction and their behaviour
+Observer/Strategy
+
+Structural D P
+Deals with the problem of structural placement / representation of the Objects
+Adapter
+--------------------------------------------------
+Creational Pattern : To create Objects efficiently
+FACTORY PATTERN: ---do------------------------------+
+
+
+Not exposing the instantiation logic to the end user 
+--------------------------------------------------------------
+SERVER COMPONENT
+class Customer
+{
+	calculateBill()
+
+}
+
+--------
+class DiscountCustomer extends Customer
+{
+
+	calculateBill(){=---------}
+}
+
+class WanderingCustomer extends Customer
+{
+
+	calculateBill(){=---------}
+}
+class LoyalCustomer extends Customer
+{
+
+	calculateBill(){=---------}
+}
+
+----------------------------------------------------
+CLIENT 
+class ShoppingMall
+{
+Customer customer;
+	public Customer getCustomer(String custType)
+	{
+		switch(custType)
+		{
+			case "discount":
+			{
+				customer = new DiscountCustomer();
+				break;
+			}
+			case "wandering":
+			{
+				customer = new WanderingCustomer();
+				break;
+			}
+			case "loyal":
+			{
+				customer = new LoyalCustomer();
+				break;
+			}
+			
+		}
+		return customer;
+
+	}
+	public void calculateBillAmt()
+	{
+			ShoppingMall sm = new ShoppingMall();
+			Customer cust= sm.getCustomer(discount"")
+			cust.calculateBill();
+	}
+
+
+}
+--------------------------------FACTORY PATTERN IMPLEMENTED-----
+SERVER COMPONENT
+class ICustomer
+{
+	calculateBill()
+
+}
+
+--------
+class DiscountCustomer implements Customer
+{
+
+	calculateBill(){=---------}
+}
+
+class WanderingCustomer implements Customer
+{
+
+	calculateBill(){=---------}
+}
+class LoyalCustomer implements Customer
+{
+
+	calculateBill(){=---------}
+}
+class RegularCustomer implements Customer
+{
+
+	calculateBill(){=---------}
+}
+
+-------edxtension of server
+class ShoppingMall
+{
+ICustomer customer;
+	public static Customer getCustomer(String custType)
+	{
+		switch(custType)
+		{
+			case "discount":
+			{
+				customer = new DiscountCustomer();
+				break;
+			}
+			case "wandering":
+			{
+				customer = new WanderingCustomer();
+				break;
+			}
+			case "loyal":
+			{
+				customer = new LoyalCustomer();
+				break;
+			}
+			case "regular":
+			{
+				customer = new RegularCustomer();
+				break;
+			}
+			
+		}
+		return customer;
+
+}
+----------------------------------------------------
+CLIENT 
+
+	}
+	public void calculateBillAmt()
+	{
+			ShoppingMall.getCustomer(discount"")
+			Customer cust= sm.getCustomer(discount"")
+			cust.calculateBill();
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

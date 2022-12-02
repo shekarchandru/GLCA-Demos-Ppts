@@ -1,0 +1,86 @@
+
+
+Functions and variablezs
+
+:
+
+getEmployeeData()
+getCustomerDetails()
+
+customerDetailsGet() WRONG XXXXXX
+
+studentresource WRONGXXXXXXX
+
+StudentResource studentResource
+FUNCTIONS STRICTLY VERB
+Function Names
+calculate()   CORRECT
+calculator() WRONG
+
+factorial() wrong
+
+findFactorial() correct
+
+availabilityCheck() WRONG
+
+checkAvailability()
+-------------------
+CLASSES / INTERFACES NOUNS /
+
+title case or Upper Camel Case
+
+
+GetEmployeeDetails WRONG XXXXX
+class EmployeeDetails
+
+class Employee
+claszs Customer
+class CustomerDetails
+class CheckCustomerAvailability WRONG XXXX
+class CustomerAvailability
+
+smallClassRoom WRONG
+
+
+interface ICustomerService
+
+interface ICustomerServiceDAO
+
+class CustomerServiceImpl implements ICustomerService
+class CustomerServiceDAOImpl implements ICustomerServiceDAO
+--------------
+VARIABLES
+more meaningful
+lower camelc ase
+List <employee> employees
+int a,b,num1 num2 WRONG
+
+
+class Account
+{
+	int accountNumber
+	String accountHolderName;
+
+
+}
+------------------------------------------
+CONSTANTS noun
+
+final int NORM_PRIORITY = 5 CORRECT
+
+final int norm_Priority WRONG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

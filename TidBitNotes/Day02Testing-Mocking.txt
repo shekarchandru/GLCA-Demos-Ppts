@@ -1,0 +1,232 @@
+AGENDA:
+1) Mocking Concepts
+2) Creating Simple MVC kind of Project
+3) Mockito without JUnit
+4) Mockito with JUnit
+5)Mockito Behaviour
+
+
+------------------------------------------------------------------------------------------------------------
+
+//
+/*  */
+
+
+application.properties
+# - comment
+sql
+-- comment
+html & xml
+<!--     --> comment
+
+jsp script   /*   */
+<properties>
+  	<junit.jupiter.version>5.7.1</junit.jupiter.version>
+  	<junit.platform.version>1.7.1</junit.platform.version>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+  </properties>
+  <dependencies>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>${junit.jupiter.version}</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-runner</artifactId>
+    <version>${junit.platform.version}</version>
+    <scope>test</scope>
+</dependency>
+  
+  </dependencies>
+-----------------------------------------------------------
+Maven Project
+1) Test Use Case Class with Test
+2) Normal class
+@RunWith(JUnitPlatform.class)
+@SelectClasses(CalculationTest.class)
+@SelectPackages("com.gl.suits.tests")
+public class DemoTestSuit {
+
+}
+*****************************************************************************************************************************************
+Mock Objects - Mocking
+1) Creating Mock/Dummy Objects - simulating the behaviour of Real time Object
+2) Creating Proxy Objects
+3) Making Unit Test a Pure Unit Test otherwise which would have been an Integration Test
+---
+Controller - Service - DAO
+Example
+--------------------
+Mockito - EasyMock - JMock - NMock(.Net)
+------------------------
+Advantages
+1) Mocking Objects
+2) Provides Exceptions Support
+3) Provides Support for annotations
+4) Method calls can be specifically Ordered
+5) Reduce Boilerplate code
+*****************************************************************************************************************************************
+DEMO
+1) Mockito - Mock [without JUnit]
+2) Mockito with JUnit
+3) Mockito Behaviour
+=============================================================================
+1) Mockito - Mock [Without Junit]
+a) TRIAL MVC kind Project[Controller/Service/DAO]
+-----------------------------------------------------------------------------------------------------------------
+b)
+
+Same as Below
+
+
+But Instead of Test Class
+Regular Class called MockitoTestWOJunit
+class MockitoTestWOJUnit
+{
+
+	StudentResource studentResource;
+	StudentService studentService;
+with p s v main()
+{
+MockitoTestWOJunit mtw = new MockitoTestWOJunit();
+mtw.setup();
+mtw.shouldSaveStudent();	
+}
+
+public void setup()
+{
+	studentService = Mockito.mock(StudentService.class);
+	studentResource = new StuentResource(studentService);
+
+}
+private void shouldSaveStudent()
+{
+	Student student = new Student("Kiran",22,"RTNagar");
+	Mockito.when(studentService.saveStudent(student)).thenReturn(1);
+
+	int result = studentResource.saveStudent("Kiran",22,"RTNagar");
+	if(result == 1)
+	{
+		syso("test passed");
+	}
+	else
+	{
+		syso("test failed");
+	}
+
+}
+}
+-------------------------------------------------------------------------------------------------------------------
+c)
+Maven Project - take dependency from StudentMockitoJUnitProj  Project
+
+Student - [name,age,address] - getters/setters/constructor/hashCode/equals method
+
+-------------------------------------------------------------------------------------------
+StudentDAO
+static int i = 1;
+
+Map <Integer,Student> studentScore = new HashMap<Integer,Student>();
+
+public int saveStudent(Student student)
+{
+	studentStore.put(i,student);
+	return i++;
+}
+---------------------------------------------------------------------------------------------
+StudentService
+	StudentDAO studentDao;
+	public StudentDAO(StudentDAO studentDao)
+	{
+		this.studentDao = studentDao;
+	}
+
+	public int saveStudenSvc(Student student)
+	{
+		int id =studentDao.saveStudent(student);
+		return id;
+	}
+	public void logInfo()
+	{
+		syso("The Information is logged");
+	}
+---------------------------------------------------------------------------------------------
+StudentResource
+	StudentService studentService;
+	
+	public StudentResource(StudentService studentService)
+	{
+		this.studentService = studentService;	
+	}
+
+	public int saveStudent(String name,int age,String address)
+	{
+		Student student = new Student(name,age,address);
+		int studentId = studentService.saveStudent(student);
+		return studentId;
+	}
+=====================================================================
+UnitTestCase
+
+Test Class
+
+@RunWith(MockitoJUnitRunner.class)
+public class StudentResourceTest
+{
+	@Mock
+	private StudentService studentService;
+
+	private StudentResource studentResource;
+
+	@Before
+	public void setUp()
+	{
+		studentResource = new StudentResource(studentResource);
+	}
+
+	@Test
+	public void shouldTestSaveStudent()
+	{
+		Student student = new Student("Kiran",12,"RTNagar");
+		Mockito.when(studentService.saveStudent(student)).thenReturn(1);
+		int result = studentResource.saveStudent("Kiran",22,"RTNagar");
+
+		
+
+		/* 
+			*/
+
+		assertEquals(1,result);
+	}
+}
+=====================================
+one ata time following
+//Mockito.verify(studentService).logInfo();
+//Mockito.verify(studentService,Mockito.times(1)).logInfo();
+		//Mockito.verify(studentService,Mockito.atLeast(1)).logInfo();
+		//	Mockito.verify(studentService,Mockito.atMost(1)).logInfo();
+		//	Mockito.verify(studentService,Mockito.atLeastOnce()).logInfo();
+		//Mockito.verify(studentService,Mockito.atMostOnce()).logInfo();
+
+------------------------------------
+class Class1
+{
+
+	m1(){};
+	m2(){}; // writes to db returns true
+	m3(){}; // writes to file retyurns true
+	m4(){};
+	m5(){};
+
+
+}
+
+
+
+
+
+
