@@ -1,0 +1,1 @@
+https://howtodoinjava.com/design-patterns/structural/facade-design-pattern/#:~:text=Facade%20pattern%20is%20one%20of,appears%20simple%20from%20the%20outside.
